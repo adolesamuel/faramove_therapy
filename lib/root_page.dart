@@ -1,3 +1,4 @@
+import 'package:faramove_therapy/screens/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'constants/app_colors.dart';
@@ -12,7 +13,7 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   List pages = [
-    Container(),
+    const HomePage(),
     Container(),
     Container(),
     Container(),
