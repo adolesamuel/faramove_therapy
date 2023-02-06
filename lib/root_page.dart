@@ -1,4 +1,4 @@
-import 'package:faramove_therapy/screens/home_page.dart';
+import 'package:faramove_therapy/screens/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'constants/app_colors.dart';
