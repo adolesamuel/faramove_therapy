@@ -16,4 +16,9 @@ class AssetStrings {
   static const String accountHome = '$_homepage/account.png';
   static const String notification = '$_homepage/notification.png';
   static const String messages = '$_homepage/message.png';
+  static const String emergencyTriangle = '$_homepage/emergency_triangle.png';
+  static const String dashArrow = '$_homepage/dash_arrow.png';
+  static const String stethBg = '$_homepage/steth.png';
+  static const String bookBg = '$_homepage/book.png';
+  static const String headsetBg = '$_homepage/headset.png';
 }
