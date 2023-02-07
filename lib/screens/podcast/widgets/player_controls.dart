@@ -1,6 +1,7 @@
 import 'package:faramove_therapy/constants/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class PlayerControls extends StatefulWidget {
   const PlayerControls({super.key});
@@ -13,6 +14,8 @@ class _PlayerControlsState extends State<PlayerControls> {
   bool isSpeakerActive = true;
   final Duration sliderValueMax = const Duration(minutes: 5);
   Duration sliderActiveValue = const Duration(minutes: 1);
+
+  int speed = 1;
 
   String formatDur(Duration duration) {
     String twoDigits(int n) => n.toString().padLeft(2, "0");
@@ -81,17 +84,45 @@ class _PlayerControlsState extends State<PlayerControls> {
             ],
           ),
 
+          Gap(22.0.h),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               TextButton(
+                onPressed: () {
+                  setState(() {
+                    if (speed > 4) {
+                      speed = 0;
+                    }
+                    speed += 1;
+                  });
+                },
+                child: Text(
+                  '${speed}x',
+                  style: const TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              Gap(30.0.w),
+              IconButton(
+                  iconSize: 28.0,
                   onPressed: () {},
-                  child: Text(
-                    '1x',
+                  icon: Image.asset(AssetStrings.rewindIcon)),
+              IconButton(
+                  iconSize: 63.33,
+                  onPressed: () {},
+                  icon: Image.asset(
+                    AssetStrings.playIcon,
+                    height: 63.33,
+                    width: 63.33,
                   )),
-              IconButton(onPressed: () {}, icon: Icon(Icons.skip_previous)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.play_arrow)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.skip_next)),
+              IconButton(
+                  iconSize: 28.0,
+                  onPressed: () {},
+                  icon: Image.asset(AssetStrings.forwardIcon)),
             ],
           )
         ],

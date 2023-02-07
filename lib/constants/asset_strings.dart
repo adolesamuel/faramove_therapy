@@ -41,4 +41,8 @@ class AssetStrings {
   static const String bookMarkIcon = '$_podcastPage/bookmark.png';
   static const String externalLinkIcon = '$_podcastPage/external_link.png';
   static const String speakerIcon = '$_podcastPage/speaker.png';
+  static const String rewindIcon = '$_podcastPage/skip-backward.png';
+  static const String forwardIcon = '$_podcastPage/skip-forward.png';
+  static const String playIcon = '$_podcastPage/play.png';
+  static const String stayInspiredTextImage = '$_podcastPage/stay_inspired.png';
 }

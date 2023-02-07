@@ -3,8 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class PodCastAppBar extends StatelessWidget with PreferredSizeWidget {
+class PodCastAppBar extends StatefulWidget with PreferredSizeWidget {
   const PodCastAppBar({super.key});
+
+  @override
+  State<PodCastAppBar> createState() => _PodCastAppBarState();
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _PodCastAppBarState extends State<PodCastAppBar> {
+  bool isSaved = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +36,19 @@ class PodCastAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-            onPressed: () {},
-            icon: const ImageIcon(AssetImage(
-              AssetStrings.bookMarkIcon,
-            ))),
+            onPressed: () {
+              setState(() {
+                isSaved = !isSaved;
+              });
+            },
+            icon: isSaved
+                ? const Icon(
+                    Icons.bookmark,
+                    color: Colors.yellow,
+                  )
+                : const ImageIcon(AssetImage(
+                    AssetStrings.bookMarkIcon,
+                  ))),
         IconButton(
             onPressed: () {},
             icon: const ImageIcon(AssetImage(
@@ -40,7 +58,4 @@ class PodCastAppBar extends StatelessWidget with PreferredSizeWidget {
       ],
     );
   }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

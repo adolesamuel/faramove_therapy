@@ -35,10 +35,13 @@ class _PodCastPageState extends State<PodCastPage> {
         children: [
           Column(
             children: [
-              Container(
+              SizedBox(
                 height: 321.0.h,
                 width: 334.0.w,
-                child: Text('Stay inspired'),
+                child: const Text(
+                  'Stay inspired',
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
               const PlayerControls(),
             ],
