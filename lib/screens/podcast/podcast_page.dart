@@ -1,8 +1,10 @@
+import 'package:faramove_therapy/constants/asset_strings.dart';
 import 'package:faramove_therapy/screens/podcast/podcast_appbar.dart';
 import 'package:faramove_therapy/screens/podcast/widgets/expand_button.dart';
 import 'package:faramove_therapy/screens/podcast/widgets/player_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class PodCastPage extends StatefulWidget {
   static const route = '/podcast';
@@ -30,19 +32,31 @@ class _PodCastPageState extends State<PodCastPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PodCastAppBar(),
-      extendBodyBehindAppBar: true,
       body: Stack(
         children: [
           Column(
             children: [
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16.0),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFFE5EFFE),
+                        Color(0xFFF5EEF0),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    )),
                 height: 321.0.h,
                 width: 334.0.w,
-                child: const Text(
-                  'Stay inspired',
-                  style: TextStyle(color: Colors.black),
+                child: Center(
+                  child: Image.asset(
+                    AssetStrings.stayInspiredTextImage,
+                    scale: 3,
+                  ),
                 ),
               ),
+              Gap(32.0.h),
               const PlayerControls(),
             ],
           ),
