@@ -131,7 +131,7 @@ class _CircularParticleState extends State<CircularParticle>
   void changeDirection() async {
     Future.doWhile(
       () async {
-        await Future.delayed(Duration(milliseconds: 600));
+        await Future.delayed(const Duration(milliseconds: 600));
         for (int index = 0; index < widget.numberOfParticles; index++) {
           randDirection[index] = (rng.nextBool());
         }
@@ -189,8 +189,9 @@ class _CircularParticleState extends State<CircularParticle>
                   curve: widget.awayAnimationCurve))
             ..addListener(
               () {
-                if (distance[index] < widget.awayRadius)
+                if (distance[index] < widget.awayRadius) {
                   setState(() => offsets[index] = awayAnimation[index].value);
+                }
                 if (awayAnimationController.isCompleted &&
                     index == offsets.length - 1) {
                   awayAnimationController.dispose();
@@ -342,6 +343,7 @@ class ParticlePainter extends CustomPainter {
             hoverIndex.contains(index) ? hoverPaint : constColorPaint);
       }
     }
+    // ignore: avoid_function_literals_in_foreach_calls
     lineOffsets.forEach(
       (item) {
         randomColorPaint = Paint()
