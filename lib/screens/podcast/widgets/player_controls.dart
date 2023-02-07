@@ -109,7 +109,14 @@ class _PlayerControlsState extends State<PlayerControls> {
               Gap(30.0.w),
               IconButton(
                   iconSize: 28.0,
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      if ((sliderActiveValue - const Duration(seconds: 30)) >
+                          Duration.zero) {
+                        sliderActiveValue -= const Duration(seconds: 30);
+                      }
+                    });
+                  },
                   icon: Image.asset(AssetStrings.rewindIcon)),
               IconButton(
                   iconSize: 63.33,
@@ -121,7 +128,14 @@ class _PlayerControlsState extends State<PlayerControls> {
                   )),
               IconButton(
                   iconSize: 28.0,
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      if ((sliderActiveValue + const Duration(seconds: 30)) <
+                          sliderValueMax) {
+                        sliderActiveValue += const Duration(seconds: 30);
+                      }
+                    });
+                  },
                   icon: Image.asset(AssetStrings.forwardIcon)),
             ],
           )
