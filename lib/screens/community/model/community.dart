@@ -1,4 +1,4 @@
-import 'package:faramove_therapy/screens/community/community_page.dart';
+
 import 'package:flutter/material.dart';
 
 class Community {
@@ -11,4 +11,9 @@ class Community {
     required this.title,
     required this.communityType,
   });
+}
+
+enum CommunityType {
+  drugs,
+  therapy,
 }
