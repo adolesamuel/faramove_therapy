@@ -16,7 +16,7 @@ class OverlappedProfileImages extends StatelessWidget {
     ];
 
     return SizedBox(
-      width: 200.0,
+      width: 100.0,
       height: 28.0,
       child: Stack(
         children: List.generate(
