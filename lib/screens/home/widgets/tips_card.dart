@@ -17,7 +17,7 @@ class TipsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56.0.h,
+      height: 60.0.h,
       child: Material(
         child: InkWell(
           onTap: onTap,

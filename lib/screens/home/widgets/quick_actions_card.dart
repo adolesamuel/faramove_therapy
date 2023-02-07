@@ -26,7 +26,7 @@ class QuickActionsCard extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(6.0),
         child: Container(
-          height: 105.0.h,
+          height: 110.0.h,
           width: 335.0.w,
           padding: EdgeInsets.symmetric(
             horizontal: 16.w,

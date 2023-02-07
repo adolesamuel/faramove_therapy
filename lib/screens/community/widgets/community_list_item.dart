@@ -3,6 +3,7 @@ import 'package:faramove_therapy/screens/community/model/community.dart';
 import 'package:faramove_therapy/screens/community/widgets/overlapped_profile_image.dart';
 import 'package:faramove_therapy/screens/community/widgets/therapy_background.dart';
 import 'package:faramove_therapy/screens/community/widgets/text_icon.dart';
+import 'package:faramove_therapy/screens/podcast/podcast_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -116,7 +117,9 @@ class CommunityListItem extends StatelessWidget {
                               backgroundColor: const Color(0xFF3079EC),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(6.0))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, PodCastPage.route);
+                          },
                           child: const Text('Join')),
                     ),
                   ],
