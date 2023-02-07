@@ -38,8 +38,11 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: pages[pageIndex],
       bottomNavigationBar: BottomNavigationBar(
+        //Make the Navbar transparent.
+        backgroundColor: const Color(0xDEFFFFFF),
         currentIndex: pageIndex,
         onTap: (value) {
           if (value < pages.length) {
