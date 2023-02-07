@@ -1,5 +1,6 @@
 import 'package:faramove_therapy/constants/asset_strings.dart';
 import 'package:faramove_therapy/screens/podcast/podcast_appbar.dart';
+import 'package:faramove_therapy/screens/podcast/widgets/animated_bg/animated_background.dart';
 import 'package:faramove_therapy/screens/podcast/widgets/expand_button.dart';
 import 'package:faramove_therapy/screens/podcast/widgets/player_controls.dart';
 import 'package:flutter/material.dart';
@@ -36,27 +37,34 @@ class _PodCastPageState extends State<PodCastPage> {
         children: [
           Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16.0),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xFFE5EFFE),
-                        Color(0xFFF5EEF0),
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    )),
-                height: 321.0.h,
-                width: 334.0.w,
-                child: Center(
-                  child: Image.asset(
-                    AssetStrings.stayInspiredTextImage,
-                    scale: 3,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16.0),
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xEEE5EFFE),
+                          Color(0xEEF5EEF0),
+                        ],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+                    ),
+                    height: 321.0.h,
+                    width: 334.0.w,
+                    child: Center(
+                      child: Image.asset(
+                        AssetStrings.stayInspiredTextImage,
+                        scale: 3,
+                      ),
+                    ),
                   ),
-                ),
+                  const PlayerBackground(),
+                ],
               ),
-              Gap(32.0.h),
+              Gap(25.0.h),
               const PlayerControls(),
             ],
           ),
