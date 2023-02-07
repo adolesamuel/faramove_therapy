@@ -99,6 +99,8 @@ class CommunityListItem extends StatelessWidget {
                   ],
                 ),
 
+                const Gap(7.0),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -106,7 +108,17 @@ class CommunityListItem extends StatelessWidget {
                     const OverlappedProfileImages(),
 
                     //Join Button
-                    ElevatedButton(onPressed: () {}, child: const Text('Join')),
+                    SizedBox(
+                      height: 32.0.h,
+                      width: 78.0.w,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF3079EC),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6.0))),
+                          onPressed: () {},
+                          child: const Text('Join')),
+                    ),
                   ],
                 )
               ],
