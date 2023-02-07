@@ -2,6 +2,7 @@ import 'package:faramove_therapy/constants/asset_strings.dart';
 import 'package:faramove_therapy/screens/home/home_page_appbar.dart';
 import 'package:faramove_therapy/screens/home/widgets/quick_actions_card.dart';
 import 'package:faramove_therapy/screens/home/widgets/tips_card.dart';
+import 'package:faramove_therapy/screens/podcast/podcast_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -13,6 +14,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void pushToPodCastPage() {
+      Navigator.pushNamed(context, PodCastPage.route);
+    }
+
     return Scaffold(
       //App Bar.
       appBar: const HomePageAppBar(),
@@ -42,7 +47,9 @@ class HomePage extends StatelessWidget {
                       'Get prompt assistance from medical professionals.',
                   assetUrl: AssetStrings.stethBg,
                   color: const Color(0xFFEEAD44),
-                  onTap: () {},
+                  onTap: () {
+                    pushToPodCastPage();
+                  },
                 ),
                 Gap(14.0.h),
                 QuickActionsCard(
@@ -51,7 +58,9 @@ class HomePage extends StatelessWidget {
                       'Listen to the highlight from your previous session',
                   assetUrl: AssetStrings.bookBg,
                   color: const Color(0xFFEE7444),
-                  onTap: () {},
+                  onTap: () {
+                    pushToPodCastPage();
+                  },
                 ),
                 Gap(14.0.h),
                 QuickActionsCard(
@@ -60,7 +69,9 @@ class HomePage extends StatelessWidget {
                       'Get easy access to converse with the assistant on how you feel',
                   assetUrl: AssetStrings.headsetBg,
                   color: const Color(0xFF7444EE),
-                  onTap: () {},
+                  onTap: () {
+                    pushToPodCastPage();
+                  },
                 ),
                 Gap(20.0.h),
               ],
@@ -75,7 +86,9 @@ class HomePage extends StatelessWidget {
           //
           TipsCard(
             title: 'Upcoming Session (0)',
-            onTap: () {},
+            onTap: () {
+              pushToPodCastPage();
+            },
           ),
 
           //
@@ -87,7 +100,9 @@ class HomePage extends StatelessWidget {
           TipsCard(
             title: 'Tips to stay healthy',
             subtitle: 'Get simple health tips.',
-            onTap: () {},
+            onTap: () {
+              pushToPodCastPage();
+            },
           ),
         ],
       ),
