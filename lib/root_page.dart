@@ -1,3 +1,4 @@
+import 'package:faramove_therapy/screens/community/community_page.dart';
 import 'package:faramove_therapy/screens/home/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _RootPageState extends State<RootPage> {
     const HomePage(),
     Container(),
     Container(),
-    Container(),
+    const CommunityPage(),
     Container(),
   ];
 
@@ -37,8 +38,11 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: pages[pageIndex],
       bottomNavigationBar: BottomNavigationBar(
+        //Make the Navbar transparent.
+        backgroundColor: const Color(0xDEFFFFFF),
         currentIndex: pageIndex,
         onTap: (value) {
           if (value < pages.length) {

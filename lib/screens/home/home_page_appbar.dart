@@ -4,17 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class HomePageAppBar extends StatefulWidget with PreferredSizeWidget {
+class HomePageAppBar extends StatelessWidget with PreferredSizeWidget {
   const HomePageAppBar({super.key});
 
-  @override
-  State<HomePageAppBar> createState() => _HomePageAppBarState();
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
-
-class _HomePageAppBarState extends State<HomePageAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -40,9 +32,9 @@ class _HomePageAppBarState extends State<HomePageAppBar> {
         ),
         Gap(20.0.w),
       ],
-      elevation: 0,
-      backgroundColor: Colors.white,
-      foregroundColor: Colors.black,
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

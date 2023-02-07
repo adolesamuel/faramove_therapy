@@ -1,4 +1,5 @@
 import 'package:faramove_therapy/root_page.dart';
+import 'package:faramove_therapy/screens/podcast/podcast_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,6 +30,11 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.blue,
+              appBarTheme: const AppBarTheme(
+                elevation: 0,
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+              ),
             ),
             scrollBehavior: const CupertinoScrollBehavior(),
             initialRoute: '/',
@@ -41,14 +47,5 @@ class MyApp extends StatelessWidget {
 //Easy Routes Table.
 Map<String, WidgetBuilder> routes() => <String, WidgetBuilder>{
       '/': (context) => const RootPage(),
-      '/music': (context) => const MusicPage(),
+      PodCastPage.route: (context) => const PodCastPage(),
     };
-
-class MusicPage extends StatelessWidget {
-  const MusicPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
