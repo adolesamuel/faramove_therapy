@@ -1,3 +1,4 @@
+import 'package:faramove_therapy/constants/app_colors.dart';
 import 'package:faramove_therapy/constants/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -103,6 +104,7 @@ class _PlayerControlsState extends State<PlayerControls> {
                   style: const TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
+                    color: AppColors.darkFontColor,
                   ),
                 ),
               ),

@@ -1,3 +1,4 @@
+import 'package:faramove_therapy/constants/app_colors.dart';
 import 'package:faramove_therapy/root_page.dart';
 import 'package:faramove_therapy/screens/podcast/podcast_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -31,6 +32,13 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
               fontFamily: 'Mulish',
+              textTheme: const TextTheme(
+                bodyLarge: TextStyle(),
+                bodyMedium: TextStyle(),
+              ).apply(
+                bodyColor: AppColors.darkFontColor,
+                displayColor: AppColors.darkFontColor,
+              ),
               appBarTheme: const AppBarTheme(
                 elevation: 0,
                 backgroundColor: Colors.white,

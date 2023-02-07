@@ -13,7 +13,7 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  List pages = [
+  List<Widget> pages = [
     const HomePage(),
     Container(),
     Container(),
