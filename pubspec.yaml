@@ -67,6 +67,7 @@ flutter:
     - assets/nav_icons/
     - assets/home/
     - assets/community/
+    - assets/podcast/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

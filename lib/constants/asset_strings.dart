@@ -3,6 +3,7 @@ class AssetStrings {
   static const String _navIcons = '$_base/nav_icons';
   static const String _homepage = '$_base/home';
   static const String _communityPage = '$_base/community';
+  static const String _podcastPage = '$_base/podcast';
 
   //NavBar Icons
   static const String homeActiveIcon = '$_navIcons/home.png';
@@ -33,4 +34,11 @@ class AssetStrings {
   static const String peopleFour = '$_communityPage/people-4.png';
   static const String profileIcon = '$_communityPage/person.png';
   static const String therapyBG = '$_communityPage/therapy-bg.png';
+
+  //Podcast page assets
+  static const String arrowDownIcon = '$_podcastPage/arrow_down.png';
+  static const String arrowUpIcon = '$_podcastPage/arrow_up.png';
+  static const String bookMarkIcon = '$_podcastPage/bookmark.png';
+  static const String externalLinkIcon = '$_podcastPage/external_link.png';
+  static const String speakerIcon = '$_podcastPage/speaker.png';
 }
