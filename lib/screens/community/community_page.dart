@@ -28,8 +28,58 @@ class _CommunityPageState extends State<CommunityPage> {
           Gap(20.0.w),
         ],
       ),
+      body: ListView.separated(
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return const CommunityListItem();
+        },
+        separatorBuilder: (context, index) => const Divider(),
+      ),
+    );
+  }
+}
 
-      // body: ListView.builder(itemBuilder: itemBuilder),
+class CommunityListItem extends StatelessWidget {
+  const CommunityListItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          height: 93.0,
+          width: 100.0,
+          decoration: BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  width: 49.0,
+                  margin: const EdgeInsets.all(10.0),
+                  child: const Text(
+                    'USE OF DRUGS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Gap(17.85.w),
+        Container(
+          width: 240.0.w,
+        )
+      ],
     );
   }
 }
