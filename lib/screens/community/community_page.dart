@@ -1,5 +1,6 @@
 import 'package:faramove_therapy/common/action_button.dart';
 import 'package:faramove_therapy/constants/asset_strings.dart';
+import 'package:faramove_therapy/screens/community/community.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -14,6 +15,38 @@ class CommunityPage extends StatefulWidget {
 class _CommunityPageState extends State<CommunityPage> {
   @override
   Widget build(BuildContext context) {
+    final List<Community> communities = [
+      Community(
+        themeColor: const Color(0xFFEC6632),
+        title: 'Talks about treatment, Pathways',
+        communityType: CommunityType.drugs,
+      ),
+      Community(
+        themeColor: const Color(0xFF6632EC),
+        title: 'How was your first session experience?',
+        communityType: CommunityType.drugs,
+      ),
+      Community(
+        themeColor: const Color(0xFFECA532),
+        title: 'How to live with cancer and be mentally stable.',
+        communityType: CommunityType.drugs,
+      ),
+      Community(
+        themeColor: const Color(0xFF505CF1),
+        title: 'Is reliance on drugs a good thing',
+        communityType: CommunityType.therapy,
+      ),
+      Community(
+        themeColor: const Color(0xFF008ADD),
+        title: 'Talks about treatment, Pathways',
+        communityType: CommunityType.drugs,
+      ),
+      Community(
+        themeColor: const Color(0xFFEC6632),
+        title: 'Talks about treatment, Pathways',
+        communityType: CommunityType.drugs,
+      ),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Community'),
@@ -27,11 +60,10 @@ class _CommunityPageState extends State<CommunityPage> {
         ],
       ),
       body: ListView.separated(
-        itemCount: 40,
+        itemCount: communities.length,
         itemBuilder: (context, index) {
           return CommunityListItem(
-            communityType:
-                index % 2 > 0 ? CommunityType.drugs : CommunityType.therapy,
+            community: communities[index],
           );
         },
         separatorBuilder: (context, index) => const Divider(),
@@ -41,16 +73,17 @@ class _CommunityPageState extends State<CommunityPage> {
 }
 
 class CommunityListItem extends StatelessWidget {
-  final CommunityType communityType;
-  final Color bgColor;
+  final Community community;
   const CommunityListItem({
     super.key,
-    this.communityType = CommunityType.drugs,
-    this.bgColor = Colors.deepPurple,
+    required this.community,
   });
 
   @override
   Widget build(BuildContext context) {
+    final title = community.title;
+    final communityType = community.communityType;
+    final bgColor = community.themeColor;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -105,11 +138,11 @@ class CommunityListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //Title Widget.
-                const SizedBox(
+                SizedBox(
                   width: 210.0,
                   child: Text(
-                    'How to live with cancer and be mentally stable .',
-                    style: TextStyle(
+                    title,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 14.0,
                     ),
@@ -224,6 +257,7 @@ class TherapyBG extends StatelessWidget {
             top: 11,
             child: CircleAvatar(
               radius: 4.0,
+              backgroundColor: Color(0xFF434DCA),
             ),
           ),
           const Positioned(
@@ -231,6 +265,7 @@ class TherapyBG extends StatelessWidget {
             top: 33,
             child: CircleAvatar(
               radius: 8.0,
+              backgroundColor: Color(0xFF434DCA),
             ),
           ),
           Align(
