@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class PodCastAppBar extends StatefulWidget with PreferredSizeWidget {
+class PodCastAppBar extends StatefulWidget implements PreferredSizeWidget {
   const PodCastAppBar({super.key});
 
   @override

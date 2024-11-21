@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class HomePageAppBar extends StatelessWidget with PreferredSizeWidget {
+class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomePageAppBar({super.key});
 
   @override
